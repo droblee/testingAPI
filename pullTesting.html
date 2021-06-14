@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API JSON Data Pull Testing</title>
+        <script type="module" src="pullScript.js"></script>
+        
+    </head>
+
+    <body>
+        <h1>API Testing</h1>
+
+        <h3>The following test pulls data from a web service.</h3>
+        <hr />
+
+        <h2>Web Service: JSONPlaceholder</h2>
+        <a href="https://jsonplaceholder.typicode.com" target="_blank">https://jsonplaceholder.typicode.com</a>
+
+        <p>JSONPlaceholder is a free web service that allows developers to test pulling data. This test pulls down user data. Available fields from API:</p>
+        <ul>
+            <li>ID</li>
+            <li>Name</li>
+            <li>Username</li>
+            <li>Email</li>
+            <li>Address</li>
+                <ul>
+                    <li>Street</li>
+                    <li>Suite</li>
+                    <li>City</li>
+                    <li>Zipcode</li>
+                    <li>Geo</li>
+                        <ul>
+                            <li>Lat</li>
+                            <li>Lng</li>
+                        </ul>
+                </ul>
+            <li>Phone</li>
+            <li>Website</li>
+            <li>Company</li>
+                <ul>
+                    <li>Name</li>
+                    <li>CatchPhrase</li>
+                    <li>BS</li>
+                </ul>
+        </ul>
+        <hr />
+
+        <h2>Select an Option</h2>
+        <button onclick="funcClickAllUsers()">All Users</button>
+        <button onclick="funcClickFindUser()">Find User</button>
+        <hr />
+
+        <div id="divAdditionalOptions"></div>
+
+        <h2>Results of Selection</h2>
+        <button onclick="funcRemoveChildNodes('divDisplayResults')">Clear Results</button>
+        <div id="divDisplayResults"></div>
+        <hr />
+    </body>
+</html>
+
+<!--
+    Helpful Links:
+    Web service
+        https://jsonplaceholder.typicode.com/
+
+    Web service example
+        https://www.freecodecamp.org/news/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa/
+
+    Fetch examples
+        https://www.javascripttutorial.net/javascript-fetch-api/
+
+    Use Fetch
+        https://howtocreateapps.com/fetch-and-display-json-html-javascript/
+
+    
+    
+-->

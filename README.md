@@ -1,2 +1,2 @@
 # testingAPI
-Testing web API's
+This repository is used for personal learning.

@@ -9,10 +9,8 @@ class UserObj{
             suite,
             city,
             zipcode,
-            geo = {
-                lat,
-                lng
-            }
+            lat,
+            lng
         },
         phone,
         website,

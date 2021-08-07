@@ -1,4 +1,4 @@
-import UserObj from "./scriptClasses.js";
+import UserObj from "scriptClasses.js";
 
 const urlUsers = "https://jsonplaceholder.typicode.com/";
 var urtTail = "users";

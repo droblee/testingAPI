@@ -39,6 +39,9 @@ async function funcClickAllUsers() {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+var btnFindUser = document.getElementById('btnClickFindUser');
+btnFindUser.addEventListener('click', funcClickFindUser);
+
 async function funcClickFindUser(){
     funcTimeStampToConsole();
 
@@ -58,6 +61,19 @@ async function funcClickFindUser(){
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+var btnClearResults = document.getElementById('btnClearResults');
+btnClearResults.addEventListener('click', funcRemoveChildNodes);
+
+function funcRemoveChildNodes() {
+    var divParentContainer = document.getElementById('divDisplayResults');
+
+    while(htmlTagByID.firstChild){
+        htmlTagByID.firstChild.remove();
+    }
+
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
 function funcTimeStampToConsole(){
     var dateStamp = new Date();
     var stringDate = dateStamp.getMonth() + "/" + dateStamp.getDate() + "/" + dateStamp.getFullYear();
@@ -66,14 +82,5 @@ function funcTimeStampToConsole(){
     console.log(stringDate + " " + stringTime);
 }
 
-// ---------------------------------------------------------------------------------------------------------------------------------------
-function funcRemoveChildNodes(parentID) {
-    var htmlTagByID = document.getElementById(parentID)
-
-    while(htmlTagByID.firstChild){
-        htmlTagByID.firstChild.remove();
-    }
-
-}
 
 // create class for user and put it in another file

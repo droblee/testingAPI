@@ -3,7 +3,11 @@ import UserObj from "./scriptClasses.js";
 const urlUsers = "https://jsonplaceholder.typicode.com/";
 var urtTail = "users";
 
+
 // ---------------------------------------------------------------------------------------------------------------------------------------
+var btnAllUsers = document.getElementById('btnClickAllUsers');
+btnAllUsers.addEventListener('click', funcClickAllUsers);
+
 async function funcClickAllUsers() {
     funcTimeStampToConsole();
 

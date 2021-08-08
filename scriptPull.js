@@ -48,7 +48,7 @@ async function funcClickFindUser(){
 
     debugger;
 
-    if(!bolFindUserButtonClicked){
+    if(bolFindUserButtonClicked == false){
         debugger;
         if(document.getElementById("divDisplayResults").childElementCount > 0) {
             funcRemoveChildNodes("divDisplayResults");

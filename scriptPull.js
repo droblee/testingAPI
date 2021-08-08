@@ -65,10 +65,10 @@ var btnClearResults = document.getElementById('btnClearResults');
 btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
-    var divParentContainer = document.getElementById('divDisplayResults');
+    var htmlParentContainer = document.getElementById('divDisplayResults');
 
-    while(htmlTagByID.firstChild){
-        htmlTagByID.firstChild.remove();
+    while(htmlParentContainer.firstChild){
+        htmlParentContainer.firstChild.remove();
     }
 
 }

@@ -1,7 +1,8 @@
 import UserObj from "./scriptClasses.js";
 
 const urlUsers = "https://jsonplaceholder.typicode.com/";
-var urtTail = "users";
+var urlTail = "users";
+bool bolFindUserButtonClicked = false;
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
@@ -20,9 +21,9 @@ async function funcClickAllUsers() {
     var htmlTag_br = document.createElement("br");
 
     console.log("URL of data:");
-    console.log(urlUsers + urtTail);
+    console.log(urlUsers + urlTail);
 
-    var objJSON = await fetch(urlUsers + urtTail)
+    var objJSON = await fetch(urlUsers + urlTail)
     .then(response => response.json())
     .then(data => data);
 
@@ -45,19 +46,23 @@ btnFindUser.addEventListener('click', funcClickFindUser);
 async function funcClickFindUser(){
     funcTimeStampToConsole();
 
-    if(document.getElementById("divDisplayResults").childElementCount > 0) {
-        funcRemoveChildNodes("divDisplayResults");
-    }
+    if!(bolFindUserButtonClicked){
+        if(document.getElementById("divDisplayResults").childElementCount > 0) {
+            funcRemoveChildNodes("divDisplayResults");
+        }
+    
+        console.log("Selected Find User");
+    
+        var htmlTag_hr = document.createElement("hr");
+        var htmlTag_h2 = document.createElement("h2");
+    
+        htmlTag_h2.innerHTML = "Find User"
+    
+        document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
+        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
+    }    
 
-    console.log("Selected Find User");
-
-    var htmlTag_hr = document.createElement("hr");
-    var htmlTag_h2 = document.createElement("h2");
-
-    htmlTag_h2.innerHTML = "Find User"
-
-    document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
-    document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
+    bolFindUserButtonClicked = true;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

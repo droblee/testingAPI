@@ -2,7 +2,7 @@ import UserObj from "./scriptClasses.js";
 
 const urlUsers = "https://jsonplaceholder.typicode.com/";
 var urlTail = "users";
-var bolFindUserButtonClicked = false;
+var bolFindUserButtonClicked = new Boolean(false);
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

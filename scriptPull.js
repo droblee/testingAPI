@@ -46,7 +46,10 @@ btnFindUser.addEventListener('click', funcClickFindUser);
 async function funcClickFindUser(){
     funcTimeStampToConsole();
 
+    debugger;
+
     if(!bolFindUserButtonClicked){
+        debugger;
         if(document.getElementById("divDisplayResults").childElementCount > 0) {
             funcRemoveChildNodes("divDisplayResults");
         }

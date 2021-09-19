@@ -46,10 +46,7 @@ btnFindUser.addEventListener('click', funcClickFindUser);
 async function funcClickFindUser(){
     funcTimeStampToConsole();
 
-    debugger;
-
     if(bolFindUserButtonClicked == false){
-        debugger;
         if(document.getElementById("divDisplayResults").childElementCount > 0) {
             funcRemoveChildNodes("divDisplayResults");
         }
@@ -63,9 +60,9 @@ async function funcClickFindUser(){
     
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
-    }    
 
-    bolFindUserButtonClicked = true;
+        bolFindUserButtonClicked = true;
+    }    
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

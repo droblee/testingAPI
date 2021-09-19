@@ -70,10 +70,15 @@ var btnClearResults = document.getElementById('btnClearResults');
 btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
-    var htmlParentContainer = document.getElementById('divDisplayResults');
+    var htmlContainerResults = document.getElementById('divDisplayResults');
+    var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
 
-    while(htmlParentContainer.firstChild){
-        htmlParentContainer.firstChild.remove();
+    while(htmlContainerResults.firstChild){
+        htmlContainerResults.firstChild.remove();
+    }
+
+    while(htmlContainerAdditional.firstChild){
+        htmlContainerAdditional.firstChild.remove();
     }
 
 }

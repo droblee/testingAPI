@@ -6,6 +6,7 @@ var bolFindUserButtonClicked = new Boolean(false);
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+// All users button
 var btnAllUsers = document.getElementById('btnClickAllUsers');
 btnAllUsers.addEventListener('click', funcClickAllUsers);
 
@@ -40,6 +41,7 @@ async function funcClickAllUsers() {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+// Find user button
 var btnFindUser = document.getElementById('btnClickFindUser');
 btnFindUser.addEventListener('click', funcClickFindUser);
 
@@ -66,6 +68,7 @@ async function funcClickFindUser(){
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+// Clear results button
 var btnClearResults = document.getElementById('btnClearResults');
 btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
@@ -81,9 +84,11 @@ function funcRemoveChildNodes() {
         htmlContainerAdditional.firstChild.remove();
     }
 
+    bolFindUserButtonClicked == true
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
+// Time stamp function
 function funcTimeStampToConsole(){
     var dateStamp = new Date();
     var stringDate = dateStamp.getMonth() + "/" + dateStamp.getDate() + "/" + dateStamp.getFullYear();

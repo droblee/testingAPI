@@ -84,7 +84,7 @@ function funcRemoveChildNodes() {
         htmlContainerAdditional.firstChild.remove();
     }
 
-    bolFindUserButtonClicked == true
+    bolFindUserButtonClicked == false
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

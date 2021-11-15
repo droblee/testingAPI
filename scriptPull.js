@@ -70,8 +70,10 @@ async function funcClickFindUser(){
     
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_input);
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_button);
+
+        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
+        
 
         bolFindUserButtonClicked = true;
     }    

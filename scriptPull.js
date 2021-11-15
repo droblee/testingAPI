@@ -62,13 +62,16 @@ async function funcClickFindUser(){
         var htmlTag_hr = document.createElement("hr");
         var htmlTag_h2 = document.createElement("h2");
         var htmlTag_input = document.createElement("input");
+        var htmlTag_button = document.createElement("button");
     
-        htmlTag_h2.innerHTML = "Find User"
-        htmlTag_input.id = "findUserInput"
+        htmlTag_h2.innerHTML = "Find User";
+        htmlTag_input.id = "findUserInput";
+        htmlTag_button.textContent = "Search";
     
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_input);
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);        
+        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
+        document.getElementById("divAdditionalOptions").appendChild(htmlTag_button);
 
         bolFindUserButtonClicked = true;
     }    

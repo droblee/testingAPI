@@ -13,6 +13,8 @@ btnAllUsers.addEventListener('click', funcClickAllUsers);
 async function funcClickAllUsers() {
     funcTimeStampToConsole();
 
+    funcRemoveChildNodes();
+
     if(document.getElementById("divDisplayResults").childElementCount > 0) {
         funcRemoveChildNodes("divDisplayResults");
     }
@@ -47,6 +49,8 @@ btnFindUser.addEventListener('click', funcClickFindUser);
 
 async function funcClickFindUser(){
     funcTimeStampToConsole();
+
+    funcRemoveChildNodes();
 
     if(bolFindUserButtonClicked == false){
         if(document.getElementById("divDisplayResults").childElementCount > 0) {

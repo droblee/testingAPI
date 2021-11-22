@@ -79,6 +79,14 @@ async function funcClickFindUser(){
     }    
 }
 
+async function funcFindSearch(){
+    var htmlTag_p = document.createElement("p");
+
+    if(document.getElementById("findUserInput").textContent.length == 0){
+        htmlTag_p.innerHTML = "No user information was entered to search.";
+    }
+}
+
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // Clear results button
 var btnClearResults = document.getElementById('btnClearResults');

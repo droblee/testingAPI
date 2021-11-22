@@ -75,13 +75,12 @@ async function funcClickFindUser(){
 
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
         
+        var btnFindUserSearch = document.getElementById('findUserSearch');
+        btnFindUserSearch.addEventListener('click', funcFindUserSearch);
 
         bolFindUserButtonClicked = true;
     }    
 }
-
-var btnFindUserSearch = document.getElementById('findUserSearch');
-btnFindUserSearch.addEventListener('click', funcFindUserSearch);
 
 async function funcFindUserSearch(){
     var htmlTag_p = document.createElement("p");

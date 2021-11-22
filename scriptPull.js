@@ -66,6 +66,7 @@ async function funcClickFindUser(){
     
         htmlTag_h2.innerHTML = "Find User";
         htmlTag_input.id = "findUserInput";
+        htmlTag_button.id = "findUserSearch";
         htmlTag_button.textContent = "Search";
     
         document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
@@ -79,7 +80,9 @@ async function funcClickFindUser(){
     }    
 }
 
+var btnFindUserSearch = document.getElementById('findUserSearch');
 btnFindUserSearch.addEventListener('click', funcFindUserSearch);
+
 async function funcFindUserSearch(){
     var htmlTag_p = document.createElement("p");
 

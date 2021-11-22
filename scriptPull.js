@@ -84,11 +84,13 @@ async function funcClickFindUser(){
 
 async function funcFindUserSearch(){
     console.log("Searched for user.");
-    
+
     var htmlTag_p = document.createElement("p");
 
     if(document.getElementById("findUserInput").textContent.length == 0){
         htmlTag_p.innerHTML = "No user information was entered to search.";
+
+        document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
 }
 

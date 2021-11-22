@@ -87,7 +87,11 @@ async function funcFindUserSearch(){
 
     var htmlTag_p = document.createElement("p");
 
-    if(document.getElementById("findUserInput").value == null){
+    htmlTag_p.innerText = document.getElementById("findUserInput").value;
+
+    document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+
+    if(document.getElementById("findUserInput").innerText.length == 0){
         htmlTag_p.innerHTML = "No user information was entered to search.";
 
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);

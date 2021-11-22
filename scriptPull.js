@@ -79,7 +79,8 @@ async function funcClickFindUser(){
     }    
 }
 
-async function funcFindSearch(){
+btnFindUserSearch.addEventListener('click', funcFindUserSearch);
+async function funcFindUserSearch(){
     var htmlTag_p = document.createElement("p");
 
     if(document.getElementById("findUserInput").textContent.length == 0){

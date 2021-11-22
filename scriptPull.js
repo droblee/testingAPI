@@ -11,6 +11,8 @@ var btnAllUsers = document.getElementById('btnClickAllUsers');
 btnAllUsers.addEventListener('click', funcClickAllUsers);
 
 async function funcClickAllUsers() {
+    console.log("Selected All Users");
+
     funcTimeStampToConsole();
 
     funcRemoveChildNodes();
@@ -18,8 +20,6 @@ async function funcClickAllUsers() {
     if(document.getElementById("divDisplayResults").childElementCount > 0) {
         funcRemoveChildNodes("divDisplayResults");
     }
-    
-    console.log("Selected All Users");
     
     var htmlTag_br = document.createElement("br");
 
@@ -48,6 +48,8 @@ var btnFindUser = document.getElementById('btnClickFindUser');
 btnFindUser.addEventListener('click', funcClickFindUser);
 
 async function funcClickFindUser(){
+    console.log("Selected Find User");
+
     funcTimeStampToConsole();
 
     funcRemoveChildNodes();
@@ -56,8 +58,6 @@ async function funcClickFindUser(){
         if(document.getElementById("divDisplayResults").childElementCount > 0) {
             funcRemoveChildNodes("divDisplayResults");
         }
-    
-        console.log("Selected Find User");
     
         var htmlTag_hr = document.createElement("hr");
         var htmlTag_h2 = document.createElement("h2");
@@ -83,6 +83,8 @@ async function funcClickFindUser(){
 }
 
 async function funcFindUserSearch(){
+    console.log("Searched for user.");
+    
     var htmlTag_p = document.createElement("p");
 
     if(document.getElementById("findUserInput").textContent.length == 0){

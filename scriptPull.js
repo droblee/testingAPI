@@ -2,8 +2,11 @@ import UserObj from "./scriptClasses.js";
 
 const urlUsers = "https://jsonplaceholder.typicode.com/";
 var urlTail = "users";
-var bolFindUserButtonClicked = new Boolean(false);
 
+var htmlContainerResults = document.getElementById('divDisplayResults');
+var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
+
+var bolFindUserButtonClicked = new Boolean(false);
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // All users button
@@ -85,6 +88,10 @@ async function funcClickFindUser(){
 async function funcFindUserSearch(){
     console.log("Searched for user.");
 
+    while(htmlContainerResults.firstChild){
+        htmlContainerResults.firstChild.remove();
+    }
+
     var htmlTag_p = document.createElement("p");
 
     htmlTag_p.innerText = document.getElementById("findUserInput").value;
@@ -104,9 +111,6 @@ var btnClearResults = document.getElementById('btnClearResults');
 btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
-    var htmlContainerResults = document.getElementById('divDisplayResults');
-    var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
-
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();
     }

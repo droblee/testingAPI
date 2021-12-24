@@ -107,8 +107,8 @@ async function funcFindUserSearch(){
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // Clear results button
-var btnClearResults = document.getElementById('btnClearResults');
-btnClearResults.addEventListener('click', funcRemoveChildNodes);
+var btnClearAll = document.getElementById('btnClearAll');
+btnClearAll.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
     while(htmlContainerResults.firstChild){
@@ -132,5 +132,4 @@ function funcTimeStampToConsole(){
     console.log(stringDate + " " + stringTime);
 }
 
-
-// create class for user and put it in another file
+// https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/

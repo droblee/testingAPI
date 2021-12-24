@@ -105,19 +105,19 @@ async function funcFindUserSearch(){
     
         objJSON.forEach(objUser => {
             switch(userInput){
-                case objJSON.id:
+                case objUser.id:
                     foundUser = objUser;
                     break;
 
-                case objJSON.name:
+                case objUser.name:
                     foundUser = objUser;
                     break;
 
-                case objJSON.username:
+                case objUser.username:
                     foundUser = objUser;
                     break;
 
-                case objJSON.email:
+                case objUser.email:
                     foundUser = objUser;
                     break;
 

@@ -6,8 +6,6 @@ var urlTail = "users";
 var htmlContainerResults = document.getElementById('divDisplayResults');
 var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
 
-var bolFindUserButtonClicked = new Boolean(false);
-
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // All users button
 var btnAllUsers = document.getElementById('btnClickAllUsers');
@@ -58,33 +56,29 @@ async function funcClickFindUser(){
     funcTimeStampToConsole();
 
     funcRemoveChildNodes();
-
-    if(bolFindUserButtonClicked == false){
-        if(document.getElementById("divDisplayResults").childElementCount > 0) {
-            funcRemoveChildNodes("divDisplayResults");
-        }
     
-        var htmlTag_hr = document.createElement("hr");
-        var htmlTag_h2 = document.createElement("h2");
-        var htmlTag_input = document.createElement("input");
-        var htmlTag_button = document.createElement("button");
-    
-        htmlTag_h2.innerHTML = "Find User";
-        htmlTag_input.id = "findUserInput";
-        htmlTag_button.id = "findUserSearch";
-        htmlTag_button.textContent = "Search";
-    
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_input);
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_button);
+    if(document.getElementById("divDisplayResults").childElementCount > 0) {
+        funcRemoveChildNodes("divDisplayResults");
+    }
 
-        document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
-        
-        var btnFindUserSearch = document.getElementById('findUserSearch');
-        btnFindUserSearch.addEventListener('click', funcFindUserSearch);
+    var htmlTag_hr = document.createElement("hr");
+    var htmlTag_h2 = document.createElement("h2");
+    var htmlTag_input = document.createElement("input");
+    var htmlTag_button = document.createElement("button");
 
-        bolFindUserButtonClicked = true;
-    }    
+    htmlTag_h2.innerHTML = "Find User";
+    htmlTag_input.id = "findUserInput";
+    htmlTag_button.id = "findUserSearch";
+    htmlTag_button.textContent = "Search";
+
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_input);
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_button);
+
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
+    
+    var btnFindUserSearch = document.getElementById('findUserSearch');
+    btnFindUserSearch.addEventListener('click', funcFindUserSearch);
 }
 
 async function funcFindUserSearch(){

@@ -82,7 +82,10 @@ async function funcClickFindUser(){
 }
 
 async function funcFindUserSearch(){
-    console.log("Searched for user.");
+    var userInput = document.getElementById("findUserInput").value;
+    var foundUser;
+
+    console.log("Searched for user: " + strUserInput);
 
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();
@@ -90,14 +93,86 @@ async function funcFindUserSearch(){
 
     var htmlTag_p = document.createElement("p");
 
-    htmlTag_p.innerText = document.getElementById("findUserInput").value;
-
-    document.getElementById("divDisplayResults").appendChild(htmlTag_p);
-
-    if(htmlTag_p.innerText == ""){
+    if(userInput == ""){
         htmlTag_p.innerHTML = "No user information was entered to search.";
 
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+    }
+    else {
+        var objJSON = await fetch(urlUsers + urlTail)
+        .then(response => response.json())
+        .then(data => data);
+    
+        objJSON.forEach(objUser => {
+            switch(userInput){
+                case objJSON.id:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.name:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.username:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.email:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.address.street:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.address.suite:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.address.city:
+                    foundUser = objUser;
+                    break;
+    
+                case objJSON.address.zipcode:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.address.geo.lat:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.address.geo.lng:
+                    foundUser = objUser;
+                    break;
+        
+                case objJSON.phone:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.website:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.company.name:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.company.catchPhrase:
+                    foundUser = objUser;
+                    break;
+
+                case objJSON.company.bs:
+                    foundUser = objUser;
+                    break;
+            }
+
+
+            var htmlTag_p = document.createElement("p");
+            htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
+    
+            document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+            document.getElementById("divDisplayResults").appendChild(htmlTag_br);
+        });
     }
 }
 

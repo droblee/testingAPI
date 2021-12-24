@@ -18,6 +18,8 @@ async function funcClickAllUsers() {
 
     funcTimeStampToConsole();
 
+    funcClearAdditionalResults()
+
     funcRemoveChildNodes();
 
     if(document.getElementById("divDisplayResults").childElementCount > 0) {
@@ -107,8 +109,8 @@ async function funcFindUserSearch(){
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // Clear all results button
-var btnClearResults = document.getElementById('btnClearResults');
-btnClearResults.addEventListener('click', funcRemoveChildNodes);
+var btnClearAll = document.getElementById('btnClearAll');
+btnClearAll.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
     while(htmlContainerResults.firstChild){
@@ -117,8 +119,8 @@ function funcRemoveChildNodes() {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
-// Clear additional info function
-function funcClearAdditional(){
+// Clear aditional results button
+function funcClearAdditionalResults(){
     while(htmlContainerAdditional.firstChild){
         htmlContainerAdditional.firstChild.remove();
 }

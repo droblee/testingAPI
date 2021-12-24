@@ -107,13 +107,20 @@ async function funcFindUserSearch(){
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // Clear all results button
-var btnClearAll = document.getElementById('btnClearAll');
-btnClearAll.addEventListener('click', funcRemoveChildNodes);
+var btnClearResults = document.getElementById('btnClearResults');
+btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();
     }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
+// Clear additional info function
+function funcClearAdditional(){
+    while(htmlContainerAdditional.firstChild){
+        htmlContainerAdditional.firstChild.remove();
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

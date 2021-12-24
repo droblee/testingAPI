@@ -123,6 +123,7 @@ function funcRemoveChildNodes() {
 function funcClearAdditionalResults(){
     while(htmlContainerAdditional.firstChild){
         htmlContainerAdditional.firstChild.remove();
+    }
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

@@ -85,7 +85,7 @@ async function funcFindUserSearch(){
     var userInput = document.getElementById("findUserInput").value;
     var foundUser;
 
-    console.log("Searched for user: " + strUserInput);
+    console.log("Searched for user: " + UserInput);
 
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();

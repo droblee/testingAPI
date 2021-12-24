@@ -109,8 +109,8 @@ async function funcFindUserSearch(){
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // Clear all results button
-var btnClearAll = document.getElementById('btnClearAll');
-btnClearAll.addEventListener('click', funcRemoveChildNodes);
+var btnClearResults = document.getElementById('btnClearResults');
+btnClearResults.addEventListener('click', funcRemoveChildNodes);
 
 function funcRemoveChildNodes() {
     while(htmlContainerResults.firstChild){

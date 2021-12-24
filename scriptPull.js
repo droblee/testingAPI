@@ -123,20 +123,20 @@ async function funcFindUserSearch(){
 
                 default:
                     foundUser = false
-            }
-
-            if(foundUser == false){
-                htmlTag_p.innerHTML = "No user found.";
-                document.getElementById("divDisplayResults").appendChild(htmlTag_p);
-            }
-            else{
-                var htmlTag_p = document.createElement("p");
-                htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
-        
-                document.getElementById("divDisplayResults").appendChild(htmlTag_p);
-                document.getElementById("divDisplayResults").appendChild(htmlTag_br);
-            }            
+            }                        
         });
+
+        if(foundUser == false){
+            htmlTag_p.innerHTML = "No user found.";
+            document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+        }
+        else{
+            var htmlTag_p = document.createElement("p");
+            htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
+    
+            document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+            document.getElementById("divDisplayResults").appendChild(htmlTag_br);
+        }
     }
 }
 

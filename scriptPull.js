@@ -121,57 +121,21 @@ async function funcFindUserSearch(){
                     foundUser = objUser;
                     break;
 
-                case objJSON.address.street:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.address.suite:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.address.city:
-                    foundUser = objUser;
-                    break;
-    
-                case objJSON.address.zipcode:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.address.geo.lat:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.address.geo.lng:
-                    foundUser = objUser;
-                    break;
-        
-                case objJSON.phone:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.website:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.company.name:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.company.catchPhrase:
-                    foundUser = objUser;
-                    break;
-
-                case objJSON.company.bs:
-                    foundUser = objUser;
-                    break;
+                default:
+                    foundUser = false
             }
 
-
-            var htmlTag_p = document.createElement("p");
-            htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
-    
-            document.getElementById("divDisplayResults").appendChild(htmlTag_p);
-            document.getElementById("divDisplayResults").appendChild(htmlTag_br);
+            if(foundUser == false){
+                htmlTag_p.innerHTML = "No user found.";
+                document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+            }
+            else{
+                var htmlTag_p = document.createElement("p");
+                htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
+        
+                document.getElementById("divDisplayResults").appendChild(htmlTag_p);
+                document.getElementById("divDisplayResults").appendChild(htmlTag_br);
+            }            
         });
     }
 }

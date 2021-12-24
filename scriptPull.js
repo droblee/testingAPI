@@ -106,7 +106,7 @@ async function funcFindUserSearch(){
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
-// Clear results button
+// Clear all results button
 var btnClearAll = document.getElementById('btnClearAll');
 btnClearAll.addEventListener('click', funcRemoveChildNodes);
 
@@ -114,12 +114,6 @@ function funcRemoveChildNodes() {
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();
     }
-
-    while(htmlContainerAdditional.firstChild){
-        htmlContainerAdditional.firstChild.remove();
-    }
-
-    bolFindUserButtonClicked = false
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------

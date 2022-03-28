@@ -56,10 +56,6 @@ async function funcClickFindUser(){
     funcTimeStampToConsole();
 
     funcRemoveChildNodes();
-    
-    //if(document.getElementById("divDisplayResults").childElementCount > 0) {
-    //    funcRemoveChildNodes("divDisplayResults");
-    //}
 
     var htmlTag_hr = document.createElement("hr");
     var htmlTag_h2 = document.createElement("h2");

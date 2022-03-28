@@ -83,7 +83,7 @@ async function funcClickFindUser(){
 
 async function funcFindUserSearch(){
     var userInput = document.getElementById("findUserInput").value;
-    var foundUser;
+    var foundUser = [];
 
     console.log("Searched for user: " + userInput);
 
@@ -123,7 +123,11 @@ async function funcFindUserSearch(){
 
                 default:
                     foundUser = false
-            }                        
+            }
+            
+            if(String(objUser.id).toUpperCase().includes(userInput.toUpperCase())){
+                
+            }
         });
 
         if(foundUser == false){

@@ -55,6 +55,8 @@ async function funcClickFindUser(){
 
     funcTimeStampToConsole();
 
+    funcClearAdditionalResults()
+
     funcRemoveChildNodes();
 
     var htmlTag_hr = document.createElement("hr");

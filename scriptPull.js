@@ -83,7 +83,6 @@ async function funcClickFindUser(){
 
 async function funcFindUserSearch(){
     var userInput = document.getElementById("findUserInput").value;
-    var foundUser = [];
 
     console.log("Searched for user: " + userInput);
 
@@ -99,44 +98,17 @@ async function funcFindUserSearch(){
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
     else {
-        var objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
+        let objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
         .then(response => response.json())
         .then(data => data);
     
-        objJSON.forEach(objUser => {
-            switch(userInput){
-                case objUser.id:
-                    foundUser = objUser;
-                    break;
-
-                case objUser.name:
-                    foundUser = objUser;
-                    break;
-
-                case objUser.username:
-                    foundUser = objUser;
-                    break;
-
-                case objUser.email:
-                    foundUser = objUser;
-                    break;
-
-                default:
-                    foundUser = false
-            }
-            
-            if(String(objUser.id).toUpperCase().includes(userInput.toUpperCase())){
-                
-            }
-        });
-
-        if(foundUser == false){
+        if(objJSON.length == 0){
             htmlTag_p.innerHTML = "No user found.";
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
         }
-        else{
+        else {
             var htmlTag_p = document.createElement("p");
-            htmlTag_p.innerHTML = "User ID: " + foundUser.id + " - Name: " + foundUser.name + " - Email: " + foundUser.email;
+            htmlTag_p.innerHTML = "User ID: " + objJSON.id + " - Name: " + objJSON.name + " - Email: " + objJSON.email;
     
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
             document.getElementById("divDisplayResults").appendChild(htmlTag_br);

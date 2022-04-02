@@ -98,7 +98,7 @@ async function funcFindUserSearch(){
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
     else {
-        let objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
+        var objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
         .then(response => response.json())
         .then(data => data);
     

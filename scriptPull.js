@@ -6,6 +6,8 @@ var urlTail = "users";
 var htmlContainerResults = document.getElementById('divDisplayResults');
 var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
 
+var whichButtonClicked = "";
+
 // ---------------------------------------------------------------------------------------------------------------------------------------
 // All users button
 var btnAllUsers = document.getElementById('btnClickAllUsers');
@@ -14,10 +16,10 @@ btnAllUsers.addEventListener('click', funcClickAllUsers);
 async function funcClickAllUsers() {
     console.log("Selected All Users");
 
+    whichButtonClicked = "allusers";
+
     funcTimeStampToConsole();
-
     funcClearAdditionalResults()
-
     funcRemoveChildNodes();
 
     if(document.getElementById("divDisplayResults").childElementCount > 0) {
@@ -53,10 +55,10 @@ btnFindUser.addEventListener('click', funcClickFindUser);
 async function funcClickFindUser(){
     console.log("Selected Find User");
 
+    whichButtonClicked = "finduser";
+
     funcTimeStampToConsole();
-
     funcClearAdditionalResults()
-
     funcRemoveChildNodes();
 
     var htmlTag_hr = document.createElement("hr");
@@ -97,7 +99,7 @@ async function funcFindUserSearch(){
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
     else {
-        var objJSON = await fetch(urlUsers + urlTail)
+        var objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
         .then(response => response.json())
         .then(data => data);
     

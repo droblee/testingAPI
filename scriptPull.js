@@ -107,7 +107,8 @@ async function funcFindUserSearch(){
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
         }
         else {
-            htmlTag_p.innerHTML = "User ID: " + objJSON.id + " - Name: " + objJSON.name + " - Email: " + objJSON.email;
+            //htmlTag_p.innerHTML = "User ID: " + objJSON.id + " - Name: " + objJSON.name + " - Email: " + objJSON.email;
+            htmlTag_p.innerHTML = "User ID: ";
     
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
         }

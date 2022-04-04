@@ -1,7 +1,6 @@
 import UserObj from "./scriptClasses.js";
 
-const urlUsers = "https://jsonplaceholder.typicode.com/";
-var urlTail = "users";
+const urlUsers = new URL('https://jsonplaceholder.typicode.com/users');
 
 var htmlContainerResults = document.getElementById('divDisplayResults');
 var htmlContainerAdditional = document.getElementById('divAdditionalOptions');
@@ -29,9 +28,9 @@ async function funcClickAllUsers() {
     var htmlTag_br = document.createElement("br");
 
     console.log("URL of data:");
-    console.log(urlUsers + urlTail);
+    console.log(urlUsers);
 
-    var objJSON = await fetch(urlUsers + urlTail)
+    var objJSON = await fetch(urlUsers)
     .then(response => response.json())
     .then(data => data);
 
@@ -98,7 +97,7 @@ async function funcFindUserSearch(){
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
     else {
-        var objJSON = await fetch(urlUsers + urlTail + "?name=" + userInput)
+        var objJSON = await fetch(urlUsers.searchParams.get(userInput))
         .then(response => response.json())
         .then(data => data);
     
@@ -107,7 +106,6 @@ async function funcFindUserSearch(){
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
         }
         else {
-            //htmlTag_p.innerHTML = "User ID: " + objJSON.id + " - Name: " + objJSON.name + " - Email: " + objJSON.email;
             htmlTag_p.innerHTML = objJSON[0];
     
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);

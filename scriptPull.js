@@ -25,12 +25,12 @@ async function funcClickAllUsers() {
         funcRemoveChildNodes("divDisplayResults");
     }
     
-    var htmlTag_br = document.createElement("br");
+    let htmlTag_br = document.createElement("br");
 
     console.log("URL of data:");
     console.log(urlUsers);
 
-    var objJSON = await fetch(urlUsers)
+    let objJSON = await fetch(urlUsers)
     .then(response => response.json())
     .then(data => data);
 
@@ -38,7 +38,7 @@ async function funcClickAllUsers() {
     console.log(objJSON);
 
     objJSON.forEach(objUser => {
-        var htmlTag_p = document.createElement("p");
+        let htmlTag_p = document.createElement("p");
         htmlTag_p.innerHTML = "User ID: " + objUser.id + " - Name: " + objUser.name + " - Email: " + objUser.email;
 
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
@@ -60,44 +60,87 @@ async function funcClickFindUser(){
     funcClearAdditionalResults()
     funcRemoveChildNodes();
 
-    var htmlTag_hr = document.createElement("hr");
-    var htmlTag_h2 = document.createElement("h2");
-    var htmlTag_input = document.createElement("input");
-    var htmlTag_button = document.createElement("button");
-
+    let htmlTag_hr = document.createElement("hr");
+    let htmlTag_h2 = document.createElement("h2");
     htmlTag_h2.innerHTML = "Find User";
-    htmlTag_input.id = "findUserInput";
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
+
+    let htmlTag_label_id = document.createElement("label"); 
+    let htmlTag_input_id = document.createElement("input");
+    htmlTag_label_id.textContent = "User ID:";
+    htmlTag_input.id = "findUserInputID";
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_label_id);
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_input_id);
+
+    let htmlTag_label_name = document.createElement("label");
+    let htmlTag_input_name = document.createElement("input");
+    htmlTag_label_name.textContent = "Users first and last name:";
+    htmlTag_input.id = "findUserInputName";
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_label_name);
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_input_name);
+
+    let htmlTag_label_email = document.createElement("label");
+    let htmlTag_input_email = document.createElement("input");
+    htmlTag_label_email.textContent = "Users email:";
+    htmlTag_input.id = "findUserInputEmail";
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_label_email);
+    document.getElementById("divAdditionalOptions").appendChild(htmlTag_input_email);
+
+    let htmlTag_button_search = document.createElement("button");
     htmlTag_button.id = "findUserSearch";
     htmlTag_button.textContent = "Search";
-
-    document.getElementById("divAdditionalOptions").appendChild(htmlTag_h2);
-    document.getElementById("divAdditionalOptions").appendChild(htmlTag_input);
     document.getElementById("divAdditionalOptions").appendChild(htmlTag_button);
 
     document.getElementById("divAdditionalOptions").appendChild(htmlTag_hr);
     
-    var btnFindUserSearch = document.getElementById('findUserSearch');
+    let btnFindUserSearch = document.getElementById('findUserSearch');
     btnFindUserSearch.addEventListener('click', funcFindUserSearch);
 }
 
 async function funcFindUserSearch(){
-    var userInput = document.getElementById("findUserInput").value;
+    let htmlTag_p = document.createElement("p");
 
-    console.log("Searched for user: " + userInput);
+    let userInputID = document.getElementById("findUserInputID").value;
+    let isNullID = true;
+
+    let userInputName = document.getElementById("findUserInputName").value;
+    let isNullName = true;
+
+    let userInputEmail = document.getElementById("findUserInputEmail").value;
+    let isNullEmail = true;
+
+    console.log("Searched for:");
+    console.log(userInputID);
+    console.log(userInputName);
+    console.log(userInputEmail);
 
     while(htmlContainerResults.firstChild){
         htmlContainerResults.firstChild.remove();
     }
 
-    var htmlTag_p = document.createElement("p");
+    if(userInputID == ""){
+        isNullID = true;
+    }
+    else{
+        isNullID = false;
 
+        let idToNum = parseInt(userInputID);
+
+        if(isNaN(idToNum)){
+            alert("User ID has to be a number.")
+        }
+    }
+
+    /*
     if(userInput == ""){
         htmlTag_p.innerHTML = "No user information was entered to search.";
 
         document.getElementById("divDisplayResults").appendChild(htmlTag_p);
     }
     else {
-        var objJSON = await fetch(urlUsers.searchParams.get(userInput))
+        let urlSearch = urlUsers.searchParams.append("name", userInput);
+
+        let objJSON = await fetch(urlSearch)
         .then(response => response.json())
         .then(data => data);
     
@@ -111,6 +154,7 @@ async function funcFindUserSearch(){
             document.getElementById("divDisplayResults").appendChild(htmlTag_p);
         }
     }
+    */
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------
